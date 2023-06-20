@@ -1,0 +1,18 @@
+{
+  "name": "products",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.87.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "scripts": {
+    "start": "webpack serve"
+  },
+  "author": "",
+  "license": "ISC"
+}
