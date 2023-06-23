@@ -1,3 +1,4 @@
-import "productsApp/ProductsIndex";
+import "products/ProductsIndex";
+import "cart/cartShow";
 
 console.log("Container");
