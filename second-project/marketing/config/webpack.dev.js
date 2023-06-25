@@ -14,10 +14,26 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "marketing",
+      name: "marketings",
       filename: "remoteEntry.js",
       exposes: {
-        "./Marketing": "./src/bootstrap.js",
+        "./MarketingApp": "./src/bootstrap.js",
+      },
+      shared: {
+        react: {
+          eager: true,
+          singleton: true,
+        },
+        "react-dom": {
+          eager: true,
+          singleton: true,
+        },
+        "@material-ui/core": {
+          eager: true,
+        },
+        "webpack-dev-server": {
+          eager: true,
+        },
       },
     }),
     new HtmlWebpackPlugin({

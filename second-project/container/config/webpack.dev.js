@@ -16,7 +16,23 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: "container",
       remotes: {
-        marketing: "marketing@http://localhost:8081/remoteEntry.js",
+        marketings: "marketings@http://localhost:8081/remoteEntry.js",
+      },
+      shared: {
+        react: {
+          eager: true,
+          singleton: true,
+        },
+        "react-dom": {
+          eager: true,
+          singleton: true,
+        },
+        "@material-ui/core": {
+          eager: true,
+        },
+        "webpack-dev-server": {
+          eager: true,
+        },
       },
     }),
     new HtmlWebpackPlugin({

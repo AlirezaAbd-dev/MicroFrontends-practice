@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 
-import App from "./App.jsx";
+import App from "./App.js";
 
 // Mount function to start up the app
 const mount = (el) => {
@@ -14,7 +14,9 @@ const mount = (el) => {
 if (process.env.NODE_ENV === "development") {
   const el = document.getElementById("_marketing-dev-root");
 
-  if (el) mount(el);
+  if (el) {
+    mount(el);
+  }
 }
 
 // We are rnning through container
