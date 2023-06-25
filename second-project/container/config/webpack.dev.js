@@ -1,6 +1,7 @@
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const deps = require("../package.json").dependencies;
 
 const commomConfig = require("./webpack.common");
 
@@ -19,6 +20,7 @@ const devConfig = {
         marketings: "marketings@http://localhost:8081/remoteEntry.js",
       },
       shared: {
+        ...deps,
         react: {
           eager: true,
           singleton: true,

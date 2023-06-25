@@ -1,6 +1,7 @@
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const deps = require("../package.json").dependencies;
 
 const commomConfig = require("./webpack.common");
 
@@ -20,6 +21,7 @@ const devConfig = {
         "./MarketingApp": "./src/bootstrap.js",
       },
       shared: {
+        ...deps,
         react: {
           eager: true,
           singleton: true,
